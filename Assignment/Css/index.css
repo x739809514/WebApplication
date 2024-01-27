@@ -38,4 +38,65 @@ li a:hover {
 
 .active {
     background-color: #111;
-  }
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.header {
+    text-align: center;
+}
+
+/* .container {
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #fff;
+} */
+
+.view-all-btn {
+    background: none;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.games-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    padding: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.game {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+.game img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.game-title {
+    font-size: 18px;
+    margin: 0;
+}
+
+.game-genre {
+    font-size: 14px;
+    color: #666;
+}
+
+.game-price {
+    font-size: 16px;
+    color: green;
+}
