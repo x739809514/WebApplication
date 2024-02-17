@@ -10,17 +10,18 @@
 <body>
     <h1>Welcome</h1>
     <!-- Here is the Navbar -->
-    <div>
-        <div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#news">Games</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="https://x739809514.github.io/#/">My Website</a></li>
-                <li class="Right"><a href="./Htmls/login.html">login</a></li>
-                <li class="Right"><a href="./Htmls/signup.html">sign up</a></li>
-            </ul>
-        </div>
+    <button id="sidebarToggle">☰</button>
+
+    <div id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#GameList">Games</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://x739809514.github.io/#/">My Website</a></li>
+            <li class="Right"><a href="./Htmls/login.html">login</a></li>
+            <li class="Right"><a href="./Htmls/signup.html">sign up</a></li>
+            <li class="Right"><a href="./Htmls/Library.html">Upload</a></li>
+        </ul>
     </div>
 
     <br>
@@ -38,10 +39,11 @@
     </div>
 
     <br>
+
     <!-- game list -->
-    <div class="main-content">
+    <div id="GameList" class="main-content">
         <div class="header">
-            <h2>My Games</h2>
+            <h2>Game List</h2>
         </div>
         <div class="games-list">
             <div class="game">
@@ -94,7 +96,8 @@
     </div>
 
 
-
+    <!-- javascript -->
+    <script src="JavaScript/index.js"></script>
 </body>
 
 </html>

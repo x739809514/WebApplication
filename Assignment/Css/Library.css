@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: brown;
+}
+
+h1 {
+    color: #ddd;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #ddd;
+}
+
+label{
+    color: #ddd;
+    font-size: 20;
+    font-style:italic;
+    font-weight: bold;
+}
+
+.InputBox{
+    width: 1000px;
+    min-height: 100px;
+    max-height: 200px;
+    padding: 20px;
+}

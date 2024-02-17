@@ -12,33 +12,6 @@ p {
     font-size: medium;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-li {
-    float: left;
-}
-
-li.Right{
-    float: right;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover {
-    background-color: #111;
-}
 
 .active {
     background-color: #111;
@@ -53,12 +26,6 @@ li a:hover {
 .header {
     text-align: center;
 }
-
-/* .container {
-    max-width: 1200px;
-    padding: 20px;
-    background-color: #fff;
-} */
 
 .view-all-btn {
     background: none;
@@ -108,4 +75,48 @@ li a:hover {
 
 .navbar-auth{
     text-align: right;
+}
+
+/* side bar style */
+.sidebar {
+    height: 100%;
+    width: 0; 
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111; 
+    overflow-x: hidden; 
+    transition: 0.5s; 
+    padding-top: 60px; 
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: white; 
+}
+
+/* side bar toggle */
+#sidebarToggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    background-color: #111;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#sidebarToggle:hover {
+    background-color: #444; 
 }

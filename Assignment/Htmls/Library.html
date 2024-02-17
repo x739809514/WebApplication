@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Upload and Display</title>
+    <link rel="stylesheet" href="../Css/Library.css">
+</head>
+<body>
+    <h2>Upload Game Information</h2>
+    <form id="gameForm">
+        <label for="gameTitle">Game Title:</label><br><br>
+        <textarea type="text" id="gameTitle" name="gameTitle" class="InputBox"></textarea><br><br>
+
+        <label for="gameScreenshot">Game Screenshot:</label><br><br>
+        <input type="file" id="gameScreenshot" name="gameScreenshot" accept="image/*" onchange="previewFile()"><br><br>
+        <img id="screenshotPreview" src="#" alt="Screenshot Preview" style="display:none;"><br><br>
+
+
+        <label for="gameDescription">Game Description:</label><br><br>
+        <textarea id="gameDescription" name="gameDescription" class="InputBox"></textarea><br><br>
+
+        <label for="gameplay">Gameplay:</label><br><br>
+        <textarea id="gameplay" name="gameplay" class="InputBox"></textarea><br><br>
+
+        <input type="submit" value="Upload">
+    </form>
+
+    <h2>Uploaded Games</h2>
+    <table id="gamesTable">
+        <tr>
+            <th>Game Title</th>
+            <th>Screenshot</th>
+            <th>Description</th>
+            <th>Gameplay</th>
+        </tr>
+    </table>
+
+    <script src="../JavaScript/library.js"></script>
+</body>
+</html>
