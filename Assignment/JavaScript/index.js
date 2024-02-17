@@ -8,3 +8,25 @@ document.getElementById('sidebarToggle').onclick = function () {
 };
 
 
+var existingData = JSON.parse(localStorage.getItem("GameData")) || [];
+
+function updateGameList() {
+    var gamesListDiv = document.querySelector('.games-list');
+    gamesListDiv.innerHTML = ''; // Clear existing content
+
+    existingData.forEach(function(game) {
+        var gameDiv = document.createElement('div');
+        gameDiv.className = 'game';
+        gameDiv.innerHTML = `
+            <img src="Resources/Images/${game.screenshot}" alt="${game.title}">
+            <h3 class="game-title">${game.title}</h3>
+            <p class="game-genre">${game.gamelabel}</p>
+            <p class="game-price">${game.price}</p>
+            <p class="game-description">${game.description}</p>
+            <p class="game-gameplay">${game.gameplay}</p>
+        `;
+        gamesListDiv.appendChild(gameDiv);
+    });
+}
+
+updateGameList();

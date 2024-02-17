@@ -5,6 +5,18 @@
     <link rel="stylesheet" href="../Css/Library.css">
 </head>
 <body>
+    <h2>Uploaded Games</h2>
+    <table id="gamesTable">
+        <tr>
+            <th>Game Title</th>
+            <th>Screenshot</th>
+            <th>Description</th>
+            <th>Gameplay</th>
+            <th>Price</th>
+            <th>Game Label</th>
+        </tr>
+    </table>
+
     <h2>Upload Game Information</h2>
     <form id="gameForm">
         <label for="gameTitle">Game Title:</label><br><br>
@@ -21,18 +33,14 @@
         <label for="gameplay">Gameplay:</label><br><br>
         <textarea id="gameplay" name="gameplay" class="InputBox"></textarea><br><br>
 
+        <label for="price">Price:</label><br><br>
+        <textarea id="price" name="price" class="InputBox"></textarea><br><br>
+
+        <label for="gamelabel">Label:</label><br><br>
+        <textarea id="gamelabel" name="gamelabel" class="InputBox"></textarea><br><br>
+
         <input type="submit" value="Upload">
     </form>
-
-    <h2>Uploaded Games</h2>
-    <table id="gamesTable">
-        <tr>
-            <th>Game Title</th>
-            <th>Screenshot</th>
-            <th>Description</th>
-            <th>Gameplay</th>
-        </tr>
-    </table>
 
     <script src="../JavaScript/library.js"></script>
 </body>
