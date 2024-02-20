@@ -10,10 +10,10 @@ document.getElementById('gameForm').addEventListener('submit', function (event) 
     var price = document.getElementById('price').value;
     var label = document.getElementById('gamelabel').value;
 
-    // Display in table (for screenshots, showing a placeholder or the filename for simplicity)
+    // Display in table
     var table = document.getElementById('gamesTable');
     var newRow = table.insertRow();
-    newRow.innerHTML = `<td>${title}</td><td>${screenshot.name}</td><td>${description}</td><td>${gameplay}</td><td>${price}</td>`;
+    newRow.innerHTML = `<td>${title}</td><td>${screenshot.name}</td><td>${description}</td><td>${gameplay}</td><td>${price}</td><td>${label}</td>`;
 
 
     var jsonData = {
@@ -58,3 +58,28 @@ function previewFile() {
         preview.style.display = "none";
     }
 }
+
+
+function validatePrice() {
+    var priceInput = document.getElementById("price").value;
+    var regex = /^\$?\d+(?:\.\d{0,2})?$/;
+    if (!regex.test(priceInput)) {
+        alert("Please input numbers for price.");
+        document.getElementById("price").value = "";
+        document.getElementById("price").focus();
+        return false;
+    }
+    return true;
+}
+
+function showAllDataInTable(){
+    var savedGameData = JSON.parse(localStorage.getItem('GameData')) || [];
+
+    var table = document.getElementById('gamesTable');
+    savedGameData.forEach(function(gameData) {
+        var newRow = table.insertRow();
+        newRow.innerHTML = `<td>${gameData.title}</td><td>${gameData.screenshot}</td><td>${gameData.description}</td><td>${gameData.gameplay}</td><td>${gameData.price}</td><td>${gameData.gamelabel}</td>`;
+    });
+}
+
+showAllDataInTable();
