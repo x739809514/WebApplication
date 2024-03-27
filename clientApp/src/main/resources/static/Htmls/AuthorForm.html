@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Game Upload and Display</title>
+    <link rel="stylesheet" href="../Css/Library.css">
+</head>
+<body>
+
+<h2>Upload Author Information</h2>
+<form id="gameForm" onsubmit="return submitAuthorForm()" method="post">
+    <label for="authorId">Author ID:</label><br><br>
+    <textarea type="text" id="authorId" name="authorId" class="InputBox"></textarea><br><br>
+
+    <label for="birthday">Birthday:</label><br><br>
+    <textarea id="birthday" name="birthday" class="InputBox"></textarea><br><br>
+
+    <label for="name">Name:</label><br><br>
+    <textarea id="name" name="name" class="InputBox"></textarea><br><br>
+
+    <label for="sex">Sex:</label><br><br>
+    <textarea id="sex" name="sex" class="InputBox"></textarea><br><br>
+
+    <label for="age">Age:</label><br><br>
+    <textarea id="age" name="age" class="InputBox"></textarea><br><br>
+
+    <input type="submit" value="Upload">
+</form>
+
+
+<script src="../JavaScript/authorForm.js"></script>
+</body>
+</html>

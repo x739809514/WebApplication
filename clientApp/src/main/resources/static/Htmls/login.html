@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="../Css/login.css">
+</head>
+
+<body>
+    <div><a href="../index.html" class="back-button">Back to Home</a></div>
+    <div class="container">
+        <h2>Login</h2>
+        <form onsubmit="return submitLogin()" method=“POST">
+            <input type="text" placeholder="Username" name="username" required>
+            <input type="password" placeholder="Password" name="password" required>
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        </form>
+    </div>
+
+    <script src="../JavaScript/login.js"></script>
+</body>
+
+</html>

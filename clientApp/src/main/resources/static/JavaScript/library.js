@@ -1,39 +1,4 @@
 document.getElementById('gameForm').addEventListener('submit', function (event) {
-    event.preventDefault(); // Prevent actual form submission
-
-    // Retrieve form data
-    var title = document.getElementById('gameTitle').value;
-    var screenshot = document.getElementById('gameScreenshot').files[0];
-    var description = document.getElementById('gameDescription').value;
-    var gameplay = document.getElementById('gameplay').value;
-    var preview = document.getElementById('screenshotPreview');
-    var price = document.getElementById('price').value;
-    var label = document.getElementById('gamelabel').value;
-
-    // Display in table
-    var table = document.getElementById('gamesTable');
-    var newRow = table.insertRow();
-    newRow.innerHTML = `<td>${title}</td><td>${screenshot.name}</td><td>${description}</td><td>${gameplay}</td><td>${price}</td><td>${label}</td>`;
-
-
-    var jsonData = {
-        title: title,
-        screenshot: screenshot.name, 
-        description: description,
-        gameplay: gameplay,
-        price: price,
-        gamelabel: label,
-    };
-    
-    // Save data in local
-    var existingData = JSON.parse(localStorage.getItem("GameData")) || [];
-    if (!Array.isArray(existingData)) {
-        existingData = [];
-    }
-    console.log(existingData);
-    existingData.push(jsonData);
-    localStorage.setItem("GameData", JSON.stringify(existingData));
-
     // Reset the form
     document.getElementById('gameForm').reset();
     preview.src='';
@@ -63,20 +28,22 @@ function previewFile() {
 function submitForm() {
     const gameData = {
         gameTitle: document.getElementById('gameTitle').value,
-        gameDescription: document.getElementById('gameDescription').value,
-        gameplay: document.getElementById('gameplay').value,
+        gameDetail: document.getElementById('gameDescription').value,
+        gamePlay: document.getElementById('gameplay').value,
         price: parseFloat(document.getElementById('price').value),
         gameLabel: document.getElementById('gamelabel').value,
+        picName : document.getElementById('gameScreenshot').files[0].name,
+        authorId: document.getElementById('gameAuthor').value
     };
 
     var regex = /^\$?\d+(?:\.\d{0,2})?$/;
-    if (!regex.test(price)) {
+    if (!regex.test(gameData.price)) {
         alert("Please input numbers for price.");
         document.getElementById("price").value = "";
         document.getElementById("price").focus();
         return false;
     }else{
-        fetch('/uploadGame', {
+        fetch('http://localhost:8080/addGames', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -90,7 +57,6 @@ function submitForm() {
         });
     }
 
-    // 阻止表单默认提交
     return false;
 }
 
@@ -100,7 +66,7 @@ function showAllDataInTable(){
     var table = document.getElementById('gamesTable');
     savedGameData.forEach(function(gameData) {
         var newRow = table.insertRow();
-        newRow.innerHTML = `<td>${gameData.title}</td><td>${gameData.screenshot}</td><td>${gameData.description}</td><td>${gameData.gameplay}</td><td>${gameData.price}</td><td>${gameData.gamelabel}</td>`;
+        newRow.innerHTML = `<td>${gameData.gameTitle}</td><td>${gameData.picName}</td><td>${gameData.gameDetail}</td><td>${gameData.gamePlay}</td><td>${gameData.price}</td><td>${gameData.gameLabel}</td>`;
     });
 }
 

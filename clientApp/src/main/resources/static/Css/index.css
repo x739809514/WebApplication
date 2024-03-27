@@ -1,0 +1,131 @@
+body {
+    background-color: brown;
+}
+
+h1 {
+    color: aliceblue;
+    text-align: center;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: medium;
+}
+
+
+.active {
+    background-color: #111;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.header {
+    text-align: center;
+}
+
+.view-all-btn {
+    background: none;
+    border: none;
+    color: blue;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.games-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
+    padding: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.game {
+    border: 1px solid #ddd;
+    padding: 10px;
+    height: auto;
+    text-align: center;
+}
+
+.game img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.game-title {
+    font-size: 18px;
+    color: brown;
+    margin: 0;
+}
+
+.game-genre {
+    font-size: 14px;
+    color: #666;
+}
+
+.game-price {
+    font-size: 16px;
+    color: green;
+}
+.game-gameplay{
+    font-size: 12px;
+    color: gray;
+}
+
+.game-description{
+    font-size: 14px;
+}
+
+.navbar-auth{
+    text-align: right;
+}
+
+/* side bar style */
+.sidebar {
+    height: 100%;
+    width: 0; 
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111; 
+    overflow-x: hidden; 
+    transition: 0.5s; 
+    padding-top: 60px; 
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: white; 
+}
+
+/* side bar toggle */
+#sidebarToggle {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    background-color: #111;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#sidebarToggle:hover {
+    background-color: #444; 
+}

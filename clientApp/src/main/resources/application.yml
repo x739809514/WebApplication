@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: webClient
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/GameLibrary
+    username: root
+    password: Zaqw2a701
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+Server:
+  port: 8081
+
+
+mybatis-plus:
+    mapper-locations: classpath:mapper/*.xml
